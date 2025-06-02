@@ -1,0 +1,17 @@
+{
+  "name": "Flow Show",
+  "id": "1089358621588511354",
+  "api": "1.0.0",
+  "main": "code.js",
+  "editorType": [
+    "figma",
+    "figjam"
+  ],
+  "ui": "ui.html",
+  "networkAccess": {
+    "allowedDomains": ["none"],
+    "reasoning": "",
+    "devAllowedDomains": []
+  },
+  "documentAccess": "dynamic-page"
+}

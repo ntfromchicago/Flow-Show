@@ -1,0 +1,591 @@
+<div id="visibility-buttons">
+  <div class="flex-container with-bottom-border">
+    <p>All Connectors</p>
+    <div class="left-gap">
+      <button id="show-all">Show</button>
+      <button id="hide-all">Hide</button>
+    </div>
+  </div>
+  <div class="flex-container with-bottom-border">
+  <input type="text" placeholder="Flow 1" id="flow-name-1" onchange="newFlowName(0)">
+    <label class="switch">
+      <input type="checkbox" class="show_toggle" onchange="showFlow(this, '1')">
+      <span class="slider round" id="verdict"></span>
+  </div>
+  <div class="flex-container with-bottom-border">
+    <input type="text" placeholder="Flow 2" id="flow-name-2" onchange="newFlowName(1)">
+    <label class="switch">
+      <input type="checkbox" class="show_toggle" onchange="showFlow(this, '2')">
+      <span class="slider round" id="verdict"></span>
+    </label>
+  </div>
+  <div class="flex-container with-bottom-border">
+    <input type="text" placeholder="Flow 3" id="flow-name-3" onchange="newFlowName(2)">
+    <label class="switch">
+      <input type="checkbox" class="show_toggle" onchange="showFlow(this, '3')">
+      <span class="slider round" id="verdict"></span>
+    </label>
+  </div>
+  <div class="flex-container with-bottom-border">
+    <input type="text" placeholder="Flow 4" id="flow-name-4" onchange="newFlowName(3)">
+    <label class="switch">
+      <input type="checkbox" class="show_toggle" onchange="showFlow(this, '4')">
+      <span class="slider round" id="verdict"></span>
+    </label>
+  </div>
+  <div class="flex-container with-bottom-border">
+    <input type="text" placeholder="Flow 5" id="flow-name-5" onchange="newFlowName(4)">
+    <label class="switch">
+      <input type="checkbox" class="show_toggle" onchange="showFlow(this, '5')">
+      <span class="slider round" id="verdict"></span>
+    </label>
+  </div>
+  <div id="extra-flows-container">
+    <div class="flex-container with-bottom-border">
+      <input type="text" placeholder="Flow 6" id="flow-name-6" onchange="newFlowName(5)">
+    <label class="switch">
+      <input type="checkbox" class="show_toggle" onchange="showFlow(this, '6')">
+      <span class="slider round" id="verdict"></span>
+    </label>
+    </div>
+    <div class="flex-container with-bottom-border">
+      <input type="text" placeholder="Flow 7" id="flow-name-7" onchange="newFlowName(6)">
+    <label class="switch">
+      <input type="checkbox" class="show_toggle" onchange="showFlow(this, '7')">
+      <span class="slider round" id="verdict"></span>
+    </label>
+    </div>
+    <div class="flex-container with-bottom-border">
+      <input type="text" placeholder="Flow 8" id="flow-name-8" onchange="newFlowName(7)">
+    <label class="switch">
+      <input type="checkbox" class="show_toggle" onchange="showFlow(this, '8')">
+      <span class="slider round" id="verdict"></span>
+    </label>
+    </div>
+    <div class="flex-container with-bottom-border">
+      <input type="text" placeholder="Flow 9" id="flow-name-9" onchange="newFlowName(8)">
+    <label class="switch">
+      <input type="checkbox" class="show_toggle" onchange="showFlow(this, '9')">
+      <span class="slider round" id="verdict"></span>
+    </label>
+    </div>
+    <div class="flex-container with-bottom-border">
+      <input type="text" placeholder="Flow 10" id="flow-name-10" onchange="newFlowName(9)">
+    <label class="switch">
+      <input type="checkbox" class="show_toggle" onchange="showFlow(this, '10')">
+      <span class="slider round" id="verdict"></span>
+    </label>
+    </div>
+  </div>
+  <div id="expand-collapse-toggle" onclick="expandOrCollapseFlowList()">
+    <div id="expand-icon">
+      <svg width="15" height="15" viewBox="0 0 15 15" fill="#4EC032" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M3.13523 6.15803C3.3241 5.95657 3.64052 5.94637 3.84197 6.13523L7.5 9.56464L11.158 6.13523C11.3595 5.94637 11.6759 5.95657 11.8648 6.15803C12.0536 6.35949 12.0434 6.67591 11.842 6.86477L7.84197 10.6148C7.64964 10.7951 7.35036 10.7951 7.15803 10.6148L3.15803 6.86477C2.95657 6.67591 2.94637 6.35949 3.13523 6.15803Z"
+          fill="#4EC032" fill-rule="evenodd" clip-rule="evenodd"></path>
+      </svg>
+    </div>
+    <div id="collapse-icon">
+      <svg width="15" height="15" viewBox="0 0 15 15" fill="#4EC032" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M3.13523 8.84197C3.3241 9.04343 3.64052 9.05363 3.84197 8.86477L7.5 5.43536L11.158 8.86477C11.3595 9.05363 11.6759 9.04343 11.8648 8.84197C12.0536 8.64051 12.0434 8.32409 11.842 8.13523L7.84197 4.38523C7.64964 4.20492 7.35036 4.20492 7.15803 4.38523L3.15803 8.13523C2.95657 8.32409 2.94637 8.64051 3.13523 8.84197Z"
+          fill="#4EC032" fill-rule="evenodd" clip-rule="evenodd"></path>
+      </svg>
+    </div>
+  </div>
+  <div class="flex-container">
+    <p>Include Locked Connectors</p>
+    <label class="switch">
+      <input type="checkbox" onchange="Check(this)">
+      <span class="slider round" id="verdict"></span>
+    </label>
+  </div>
+</div>
+<div id="select-tags">
+  <div class="flex-container with-bottom-border">
+    <p>Assign Selected Arrow(s)</p>
+  </div>
+  <div class="flex-container with-bottom-border">
+    <p id="readonly-name-1" class="minor-offset-from-write-to-read">Flow 1</p>
+    <div class="left-gap">
+      <div class="checkmark" id="checkmark-1">
+        <svg width="15" height="15" viewBox="0 0 15 15" fill="#4EC032" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M11.4669 3.72684C11.7558 3.91574 11.8369 4.30308 11.648 4.59198L7.39799 11.092C7.29783 11.2452 7.13556 11.3467 6.95402 11.3699C6.77247 11.3931 6.58989 11.3355 6.45446 11.2124L3.70446 8.71241C3.44905 8.48022 3.43023 8.08494 3.66242 7.82953C3.89461 7.57412 4.28989 7.55529 4.5453 7.78749L6.75292 9.79441L10.6018 3.90792C10.7907 3.61902 11.178 3.53795 11.4669 3.72684Z"
+            fill="#4EC032" fill-rule="evenodd" clip-rule="evenodd"></path>
+        </svg>
+      </div>
+      <button id="tag-arrows-1" onclick="tagArrow('1')">Add</button>
+    </div>
+  </div>
+  <div class="flex-container with-bottom-border">
+    <p id="readonly-name-2" class="minor-offset-from-write-to-read">Flow 2</p>
+    <div class="left-gap">
+      <div class="checkmark" id="checkmark-2">
+        <svg width="15" height="15" viewBox="0 0 15 15" fill="#4EC032" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M11.4669 3.72684C11.7558 3.91574 11.8369 4.30308 11.648 4.59198L7.39799 11.092C7.29783 11.2452 7.13556 11.3467 6.95402 11.3699C6.77247 11.3931 6.58989 11.3355 6.45446 11.2124L3.70446 8.71241C3.44905 8.48022 3.43023 8.08494 3.66242 7.82953C3.89461 7.57412 4.28989 7.55529 4.5453 7.78749L6.75292 9.79441L10.6018 3.90792C10.7907 3.61902 11.178 3.53795 11.4669 3.72684Z"
+            fill="#4EC032" fill-rule="evenodd" clip-rule="evenodd"></path>
+        </svg>
+      </div>
+      <button id="tag-arrows-2" onclick="tagArrow('2')">Add</button>
+    </div>
+  </div>
+  <div class="flex-container with-bottom-border">
+    <p id="readonly-name-3" class="minor-offset-from-write-to-read">Flow 3</p>
+    <div class="left-gap">
+      <div class="checkmark" id="checkmark-3">
+        <svg width="15" height="15" viewBox="0 0 15 15" fill="#4EC032" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M11.4669 3.72684C11.7558 3.91574 11.8369 4.30308 11.648 4.59198L7.39799 11.092C7.29783 11.2452 7.13556 11.3467 6.95402 11.3699C6.77247 11.3931 6.58989 11.3355 6.45446 11.2124L3.70446 8.71241C3.44905 8.48022 3.43023 8.08494 3.66242 7.82953C3.89461 7.57412 4.28989 7.55529 4.5453 7.78749L6.75292 9.79441L10.6018 3.90792C10.7907 3.61902 11.178 3.53795 11.4669 3.72684Z"
+            fill="#4EC032" fill-rule="evenodd" clip-rule="evenodd"></path>
+        </svg>
+      </div>
+      <button id="tag-arrows-3" onclick="tagArrow('3')">Add</button>
+    </div>
+  </div>
+  <div class="flex-container with-bottom-border">
+    <p id="readonly-name-4" class="minor-offset-from-write-to-read">Flow 4</p>
+    <div class="left-gap">
+      <div class="checkmark" id="checkmark-4">
+        <svg width="15" height="15" viewBox="0 0 15 15" fill="#4EC032" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M11.4669 3.72684C11.7558 3.91574 11.8369 4.30308 11.648 4.59198L7.39799 11.092C7.29783 11.2452 7.13556 11.3467 6.95402 11.3699C6.77247 11.3931 6.58989 11.3355 6.45446 11.2124L3.70446 8.71241C3.44905 8.48022 3.43023 8.08494 3.66242 7.82953C3.89461 7.57412 4.28989 7.55529 4.5453 7.78749L6.75292 9.79441L10.6018 3.90792C10.7907 3.61902 11.178 3.53795 11.4669 3.72684Z"
+            fill="#4EC032" fill-rule="evenodd" clip-rule="evenodd"></path>
+        </svg>
+      </div>
+      <button id="tag-arrows-4" onclick="tagArrow('4')">Add</button>
+    </div>
+  </div>
+  <div class="flex-container with-bottom-border">
+    <p id="readonly-name-5" class="minor-offset-from-write-to-read">Flow 5</p>
+    <div class="left-gap">
+      <div class="checkmark" id="checkmark-5">
+        <svg width="15" height="15" viewBox="0 0 15 15" fill="#4EC032" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M11.4669 3.72684C11.7558 3.91574 11.8369 4.30308 11.648 4.59198L7.39799 11.092C7.29783 11.2452 7.13556 11.3467 6.95402 11.3699C6.77247 11.3931 6.58989 11.3355 6.45446 11.2124L3.70446 8.71241C3.44905 8.48022 3.43023 8.08494 3.66242 7.82953C3.89461 7.57412 4.28989 7.55529 4.5453 7.78749L6.75292 9.79441L10.6018 3.90792C10.7907 3.61902 11.178 3.53795 11.4669 3.72684Z"
+            fill="#4EC032" fill-rule="evenodd" clip-rule="evenodd"></path>
+        </svg>
+      </div>
+      <button id="tag-arrows-5" onclick="tagArrow('5')">Add</button>
+    </div>
+  </div>
+  <div id="extra-tags-container">
+    <div class="flex-container with-bottom-border">
+      <p id="readonly-name-6" class="minor-offset-from-write-to-read">Flow 6</p>
+      <div class="left-gap">
+        <div class="checkmark" id="checkmark-6">
+          <svg width="15" height="15" viewBox="0 0 15 15" fill="#4EC032" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M11.4669 3.72684C11.7558 3.91574 11.8369 4.30308 11.648 4.59198L7.39799 11.092C7.29783 11.2452 7.13556 11.3467 6.95402 11.3699C6.77247 11.3931 6.58989 11.3355 6.45446 11.2124L3.70446 8.71241C3.44905 8.48022 3.43023 8.08494 3.66242 7.82953C3.89461 7.57412 4.28989 7.55529 4.5453 7.78749L6.75292 9.79441L10.6018 3.90792C10.7907 3.61902 11.178 3.53795 11.4669 3.72684Z"
+              fill="#4EC032" fill-rule="evenodd" clip-rule="evenodd"></path>
+          </svg>
+        </div>
+        <button id="tag-arrows-6" onclick="tagArrow('6')">Add</button>
+      </div>
+    </div>
+    <div class="flex-container with-bottom-border">
+      <p id="readonly-name-7" class="minor-offset-from-write-to-read">Flow 7</p>
+      <div class="left-gap">
+        <div class="checkmark" id="checkmark-7">
+          <svg width="15" height="15" viewBox="0 0 15 15" fill="#4EC032" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M11.4669 3.72684C11.7558 3.91574 11.8369 4.30308 11.648 4.59198L7.39799 11.092C7.29783 11.2452 7.13556 11.3467 6.95402 11.3699C6.77247 11.3931 6.58989 11.3355 6.45446 11.2124L3.70446 8.71241C3.44905 8.48022 3.43023 8.08494 3.66242 7.82953C3.89461 7.57412 4.28989 7.55529 4.5453 7.78749L6.75292 9.79441L10.6018 3.90792C10.7907 3.61902 11.178 3.53795 11.4669 3.72684Z"
+              fill="#4EC032" fill-rule="evenodd" clip-rule="evenodd"></path>
+          </svg>
+        </div>
+        <button id="tag-arrows-7" onclick="tagArrow('7')">Add</button>
+      </div>
+    </div>
+    <div class="flex-container with-bottom-border">
+      <p id="readonly-name-8" class="minor-offset-from-write-to-read">Flow 8</p>
+      <div class="left-gap">
+        <div class="checkmark" id="checkmark-8">
+          <svg width="15" height="15" viewBox="0 0 15 15" fill="#4EC032" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M11.4669 3.72684C11.7558 3.91574 11.8369 4.30308 11.648 4.59198L7.39799 11.092C7.29783 11.2452 7.13556 11.3467 6.95402 11.3699C6.77247 11.3931 6.58989 11.3355 6.45446 11.2124L3.70446 8.71241C3.44905 8.48022 3.43023 8.08494 3.66242 7.82953C3.89461 7.57412 4.28989 7.55529 4.5453 7.78749L6.75292 9.79441L10.6018 3.90792C10.7907 3.61902 11.178 3.53795 11.4669 3.72684Z"
+              fill="#4EC032" fill-rule="evenodd" clip-rule="evenodd"></path>
+          </svg>
+        </div>
+        <button id="tag-arrows-8" onclick="tagArrow('8')">Add</button>
+      </div>
+    </div>
+    <div class="flex-container with-bottom-border">
+      <p id="readonly-name-9" class="minor-offset-from-write-to-read">Flow 9</p>
+      <div class="left-gap">
+        <div class="checkmark" id="checkmark-9">
+          <svg width="15" height="15" viewBox="0 0 15 15" fill="#4EC032" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M11.4669 3.72684C11.7558 3.91574 11.8369 4.30308 11.648 4.59198L7.39799 11.092C7.29783 11.2452 7.13556 11.3467 6.95402 11.3699C6.77247 11.3931 6.58989 11.3355 6.45446 11.2124L3.70446 8.71241C3.44905 8.48022 3.43023 8.08494 3.66242 7.82953C3.89461 7.57412 4.28989 7.55529 4.5453 7.78749L6.75292 9.79441L10.6018 3.90792C10.7907 3.61902 11.178 3.53795 11.4669 3.72684Z"
+              fill="#4EC032" fill-rule="evenodd" clip-rule="evenodd"></path>
+          </svg>
+        </div>
+        <button id="tag-arrows-9" onclick="tagArrow('9')">Add</button>
+      </div>
+    </div>
+    <div class="flex-container with-bottom-border">
+      <p id="readonly-name-10" class="minor-offset-from-write-to-read">Flow 10</p>
+      <div class="left-gap">
+        <div class="checkmark" id="checkmark-10">
+          <svg width="15" height="15" viewBox="0 0 15 15" fill="#4EC032" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M11.4669 3.72684C11.7558 3.91574 11.8369 4.30308 11.648 4.59198L7.39799 11.092C7.29783 11.2452 7.13556 11.3467 6.95402 11.3699C6.77247 11.3931 6.58989 11.3355 6.45446 11.2124L3.70446 8.71241C3.44905 8.48022 3.43023 8.08494 3.66242 7.82953C3.89461 7.57412 4.28989 7.55529 4.5453 7.78749L6.75292 9.79441L10.6018 3.90792C10.7907 3.61902 11.178 3.53795 11.4669 3.72684Z"
+              fill="#4EC032" fill-rule="evenodd" clip-rule="evenodd"></path>
+          </svg>
+        </div>
+        <button id="tag-arrows-10" onclick="tagArrow('10')">Add</button>
+      </div>
+    </div>
+  </div>
+  <div id="expand-collapse-toggle" onclick="expandOrCollapseFlowList()">
+    <div id="expand-tags-icon">
+      <svg width="15" height="15" viewBox="0 0 15 15" fill="#4EC032" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M3.13523 6.15803C3.3241 5.95657 3.64052 5.94637 3.84197 6.13523L7.5 9.56464L11.158 6.13523C11.3595 5.94637 11.6759 5.95657 11.8648 6.15803C12.0536 6.35949 12.0434 6.67591 11.842 6.86477L7.84197 10.6148C7.64964 10.7951 7.35036 10.7951 7.15803 10.6148L3.15803 6.86477C2.95657 6.67591 2.94637 6.35949 3.13523 6.15803Z"
+          fill="#4EC032" fill-rule="evenodd" clip-rule="evenodd"></path>
+      </svg>
+    </div>
+    <div id="collapse-tags-icon">
+      <svg width="15" height="15" viewBox="0 0 15 15" fill="#4EC032" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M3.13523 8.84197C3.3241 9.04343 3.64052 9.05363 3.84197 8.86477L7.5 5.43536L11.158 8.86477C11.3595 9.05363 11.6759 9.04343 11.8648 8.84197C12.0536 8.64051 12.0434 8.32409 11.842 8.13523L7.84197 4.38523C7.64964 4.20492 7.35036 4.20492 7.15803 4.38523L3.15803 8.13523C2.95657 8.32409 2.94637 8.64051 3.13523 8.84197Z"
+          fill="#4EC032" fill-rule="evenodd" clip-rule="evenodd"></path>
+      </svg>
+    </div>
+  </div>
+  <div class="flex-container with-bottom-border">
+    <p>Remove Flow</p>
+    <div class="left-gap">
+      <button id="tag-arrows-null">Reset</button>
+    </div>
+  </div>
+</div>
+<style>
+  .figma-light body,
+  .figma-dark body {
+    background-color: var(--figma-color-bg);
+    color: var(--figma-color-text);
+  }
+
+  p,
+  button {
+    font-family: 'Inter', 'Roboto', sans-serif;
+    font-size: 12px;
+  }
+
+  button {
+    appearance: none;
+    -webkit-appearance: none;
+    border: none;
+    border-radius: 16px;
+    color:#4EC032;
+    height: 24px;
+    padding: 4px 9px;
+    background-color: transparent;
+    border: 1px solid #ebebeb;
+  }
+
+  button:hover {
+    background-color: #ebebeb;
+  }
+
+  #extra-flows-container, #extra-tags-container {
+    display: none;
+  }
+
+  input[type=text] {
+    font-family: 'Inter', 'Roboto', sans-serif;
+    font-size: 12px;
+    appearance: none;
+    -webkit-appearance: none;
+    border: none;
+    border-bottom: 1px solid lightgray;
+    text-overflow: ellipsis;
+    border-radius: 0;
+    background-color: var(--figma-color-bg);
+    color: var(--figma-color-text);
+  }
+
+  input[type=text]:focus {
+    appearance: none;
+    -webkit-appearance: none;
+    border: none;
+    border-bottom: 1px solid #4EC032;
+    outline: none;
+  }
+
+  button:active {
+    background-color: rgb(209, 209, 209);
+  }
+
+  #expand-collapse-toggle {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 32x;
+  }
+
+  #expand-icon, #expand-tags-icon {
+    display: block;
+  }
+
+  #collapse-icon, #collapse-tags-icon {
+    display: none;
+  }
+
+  .flex-container {
+    align-items: center;
+    display: flex;
+    height: 32px;
+    justify-content: space-between;
+  }
+
+  .with-extra-height {
+    height: 60px !important;
+  }
+
+  .with-bottom-border {
+    border-bottom: 0px solid #ebebeb;
+  }
+
+  .left-gap {
+    margin-left: auto;
+  }
+
+  .minor-offset-from-write-to-read {
+    padding-left: 2px;
+    border: none;
+    border-bottom: 1px solid transparent;
+  }
+
+  #select-tags {
+    display: none;
+  }
+
+  #tag-arrows-1, #tag-arrows-2, #tag-arrows-3, #tag-arrows-4, #tag-arrows-5, #tag-arrows-6, #tag-arrows-7, #tag-arrows-8, #tag-arrows-9, #tag-arrows-10 {
+    display: block;
+  }
+
+  #checkmark-1, #checkmark-2, #checkmark-3, #checkmark-4, #checkmark-5, #checkmark-6, #checkmark-7, #checkmark-8, #checkmark-9, #checkmark-10 {
+    display: none;
+  }
+
+  /* CSS from https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_switch */
+
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 48px;
+    height: 24px;
+  }
+
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 2px;
+    bottom: 2px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+
+  input:checked+.slider {
+    background-color: #4EC032;
+  }
+
+  input:focus+.slider {
+    box-shadow: 0 0 1px #4EC032;
+  }
+
+  input:checked+.slider:before {
+    -webkit-transform: translateX(24px);
+    -ms-transform: translateX(24px);
+    transform: translateX(24px);
+  }
+
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+
+  .slider.round:before {
+    border-radius: 50%;
+  }
+</style>
+<script>
+
+  var selectedFlowString = "NONE";
+
+  var flowNames = [];
+
+  document.getElementById('show-all').onclick = () => {
+    parent.postMessage({ pluginMessage: { type: 'show-all' } }, '*');
+    toggleAllToggles(true);
+  }
+
+  document.getElementById('hide-all').onclick = () => {
+    parent.postMessage({ pluginMessage: { type: 'hide-all' } }, '*');
+    toggleAllToggles(false);
+  }
+
+  function toggleAllToggles(selected) {
+    const checkboxes = document.querySelectorAll('.show_toggle');
+    checkboxes.forEach((checkbox) => {
+      checkbox.checked = selected;
+    });
+  }
+
+  function showFlow(identifier, aTag) {
+    console.log('showFlow called with identifier: ' + identifier);
+    parent.postMessage({ pluginMessage: { type: 'show-flow', tag: aTag, show: identifier.checked } }, '*')
+  }
+
+  function tagArrow(aTag) {
+    toggleCheckmark(aTag);
+    parent.postMessage({ pluginMessage: { type: 'tag-arrows', tag: aTag } }, '*')    
+  }
+
+  document.getElementById('tag-arrows-null').onclick = () => {
+    toggleCheckmark('MIXED');
+    parent.postMessage({ pluginMessage: { type: 'tag-arrows-null' } }, '*')
+  }
+
+  onmessage = (event) => {
+
+    if (event.data.pluginMessage.text == 'show-visibility-buttons') {
+      document.getElementById('visibility-buttons').style.display = 'block';
+      document.getElementById('select-tags').style.display = 'none';
+    }
+
+    if (event.data.pluginMessage.text == 'show-select-tags') {
+      document.getElementById('visibility-buttons').style.display = 'none';
+      document.getElementById('select-tags').style.display = 'block';
+      toggleCheckmark(event.data.pluginMessage.currentlySelectedFlow);
+    }
+
+    if (event.data.pluginMessage.text == 'show-no-connector-alert') {
+      alert('Flow Show did not detect any arrow connectors in this file.');
+    }
+
+    if (event.data.pluginMessage.text == 'initialize-flow-names') {
+      flowNames = event.data.pluginMessage.flowArray;
+      loadFlowNames();
+      setTimeout(() => toggleAllToggles(true), 0);
+    }
+
+  }
+
+  function newFlowName(i) {
+    const idString = 'flow-name-' + (i + 1);
+    const rawValue = document.getElementById(idString).value;
+
+    // Strip commas from flow name, because that is the delimiter we're using
+    const trimmedValue = rawValue.replace(/,/g, "");
+    flowNames[i] = trimmedValue;
+    document.getElementById(idString).value = trimmedValue;
+
+    if (flowNames[i].length < 1) {
+      flowNames[i] = "Flow " + (i + 1);
+    }
+
+    loadFlowNames();
+    parent.postMessage({ pluginMessage: { type: 'save-flow-names', nameArray: flowNames } }, '*');
+  }
+
+  function loadFlowNames() {
+    for (let i = 0; i < flowNames.length; i++) {
+      const inputName = 'flow-name-' + (i + 1);
+      const readonlyName = 'readonly-name-' + (i + 1);
+
+      if (flowNames[i].length < 1) {
+        flowNames[i] = "Flow " + (i + 1);
+      }
+
+      document.getElementById(inputName).value = flowNames[i];
+      document.getElementById(readonlyName).innerText = flowNames[i];
+    }
+  }
+
+  function expandOrCollapseFlowList() {
+
+    if (document.getElementById('expand-icon').style.display == 'block') {
+      document.getElementById('expand-icon').style.display = 'none';
+      document.getElementById('collapse-icon').style.display = 'block';
+      document.getElementById('expand-tags-icon').style.display = 'none';
+      document.getElementById('collapse-tags-icon').style.display = 'block';
+      document.getElementById('extra-flows-container').style.display = 'block';
+      document.getElementById('extra-tags-container').style.display = 'block';
+      parent.postMessage({ pluginMessage: { type: 'resize-expand' } }, '*');
+    } else {
+      document.getElementById('expand-icon').style.display = 'block';
+      document.getElementById('collapse-icon').style.display = 'none';
+      document.getElementById('expand-tags-icon').style.display = 'block';
+      document.getElementById('collapse-tags-icon').style.display = 'none';
+      document.getElementById('extra-flows-container').style.display = 'none';
+      document.getElementById('extra-tags-container').style.display = 'none';
+      parent.postMessage({ pluginMessage: { type: 'resize-collapse' } }, '*');
+    }
+
+  }
+
+  function Check(value) {
+    if (value.checked === true) {
+      parent.postMessage({ pluginMessage: { type: 'include-locked-true' } }, '*');
+    } else {
+      parent.postMessage({ pluginMessage: { type: 'include-locked-false' } }, '*');
+    }
+  };
+
+  // resetCheckmark makes all the 'Add' buttons and checkmarks visible again
+  // use toggleCheckmark to control visibility
+  function resetCheckmark() {
+
+    for (let i = 0; i < flowNames.length; i++) {
+      const correctIndex = i + 1;
+      const tagArrowId = "tag-arrows-" + correctIndex;
+      document.getElementById(tagArrowId).style.display = 'block';
+      const checkmarkId = "checkmark-" + correctIndex;
+      document.getElementById(checkmarkId).style.display = 'none';
+    }
+
+  }
+
+  function toggleCheckmark(tagString) {
+    resetCheckmark();
+
+    // a tagString of NONE means it's not assigned
+    if (tagString === 'NONE') {
+      return;
+    }
+    if (tagString === 'MIXED') {
+      return;
+    }
+
+    // Hide the Add button for the selected flow
+    const tagArrowId = 'tag-arrows-' + tagString;
+    document.getElementById(tagArrowId).style.display = 'none';
+    const checkmarkId = "checkmark-" + tagString;
+    document.getElementById(checkmarkId).style.display = 'block';
+  }
+
+</script>
